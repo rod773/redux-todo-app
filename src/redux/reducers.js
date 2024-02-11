@@ -80,8 +80,15 @@ const todoReducer = (state = initialState, action) => {
         filter: state.filter,
         searchItem: action.payload.searchItem,
       };
+
+    case MARK_ALL_COMPLETED:
+      return {
+        todos: state.todos.map((todo) => ({ ...todo, completed: true })),
+        filter: state.filter,
+        searchItem: state.searchItem,
+      };
     default:
-      break;
+      return state;
   }
 };
 
