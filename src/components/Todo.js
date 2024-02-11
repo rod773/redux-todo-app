@@ -12,7 +12,9 @@ const Todo = () => {
 
   const [newTodoText, setMewTodoText] = useState("");
 
-  const handleAddTodoClick = function () {};
+  const handleAddTodoClick = function () {
+    handleAddTodo(newTodoText.trim());
+  };
 
   return (
     <div className="max-w-4xl mx-auto sm:mt-8 p-4 bg-gray-100 rounded">
