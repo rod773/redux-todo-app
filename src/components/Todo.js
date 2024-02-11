@@ -1,4 +1,5 @@
 import React from "react";
+import { BsPlus } from "react-icons/bs";
 
 const Todo = () => {
   return (
@@ -14,6 +15,9 @@ const Todo = () => {
           placeholder="Add Todo"
           className="flex-grow p-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500"
         />
+        <button className="ml-4 p-2 bg-blue-400 text-white rounded  hover:bg-blue-600">
+          <BsPlus />
+        </button>
       </div>
     </div>
   );
