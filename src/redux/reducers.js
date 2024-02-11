@@ -44,6 +44,42 @@ const todoReducer = (state = initialState, action) => {
         filter: state.filter,
         searchItem: state.searchItem,
       };
+
+    case MARK_COMPLETED:
+      return {
+        todos: state.todos.map((todo, index) =>
+          index === index.action.payload.id
+            ? { ...todo, completed: true }
+            : todo
+        ),
+        filter: state.filter,
+        searchItem: state.searchItem,
+      };
+
+    case MARK_INCOMPLETED:
+      return {
+        todos: state.todos.map((todo, index) =>
+          index === index.action.payload.id
+            ? { ...todo, completed: false }
+            : todo
+        ),
+        filter: state.filter,
+        searchItem: state.searchItem,
+      };
+
+    case FILTER_TODOS:
+      return {
+        todos: state.todos,
+        filter: action.payload.filter,
+        searchItem: state.searchItem,
+      };
+
+    case UPDATE_SEARCH_TERM:
+      return {
+        todos: state.todos,
+        filter: state.filter,
+        searchItem: action.payload.searchItem,
+      };
     default:
       break;
   }
