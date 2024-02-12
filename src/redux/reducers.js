@@ -12,7 +12,7 @@ import {
 const initialState = {
   todos: [],
   filter: "ALL",
-  searchItem: "",
+  searchTerm: "",
 };
 
 const todoReducer = (state = initialState, action) => {
@@ -24,7 +24,7 @@ const todoReducer = (state = initialState, action) => {
           { text: action.payload.text, completed: false },
         ],
         filter: state.filter,
-        searchItem: state.searchItem,
+        searchTerm: state.searchTerm,
       };
     case TOGGLE_TODO:
       return {
@@ -34,7 +34,7 @@ const todoReducer = (state = initialState, action) => {
             : todo
         ),
         filter: state.filter,
-        searchItem: state.searchItem,
+        searchTerm: state.searchTerm,
       };
     case REMOVE_TODO:
       return {
@@ -42,7 +42,7 @@ const todoReducer = (state = initialState, action) => {
           (todo, index) => index !== index.action.payload.id
         ),
         filter: state.filter,
-        searchItem: state.searchItem,
+        searchTerm: state.searchTerm,
       };
 
     case MARK_COMPLETED:
@@ -53,7 +53,7 @@ const todoReducer = (state = initialState, action) => {
             : todo
         ),
         filter: state.filter,
-        searchItem: state.searchItem,
+        searchTerm: state.searchTerm,
       };
 
     case MARK_INCOMPLETED:
@@ -64,28 +64,28 @@ const todoReducer = (state = initialState, action) => {
             : todo
         ),
         filter: state.filter,
-        searchItem: state.searchItem,
+        searchTerm: state.searchTerm,
       };
 
     case FILTER_TODOS:
       return {
         todos: state.todos,
         filter: action.payload.filter,
-        searchItem: state.searchItem,
+        searchTerm: state.searchTerm,
       };
 
     case UPDATE_SEARCH_TERM:
       return {
         todos: state.todos,
         filter: state.filter,
-        searchItem: action.payload.searchItem,
+        searchTerm: action.payload.searchTerm,
       };
 
     case MARK_ALL_COMPLETED:
       return {
         todos: state.todos.map((todo) => ({ ...todo, completed: true })),
         filter: state.filter,
-        searchItem: state.searchItem,
+        searchTerm: state.searchTerm,
       };
     default:
       return state;
