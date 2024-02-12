@@ -46,13 +46,12 @@ const Todo = () => {
           <BsPlus />
         </button>
       </div>
-
-      <div>
+      <div className="flex items-center justify-between">
         <FilterButton />
         <div className="flex items-center mb-4"></div>
-      </div>
-      <div>
-        <div className="flex items-denter mb-4">
+        <div></div>
+
+        <div className="flex items-center mb-4">
           <input
             value={searchTerm}
             onChange={(e) => handleSearchChange(e.target.value)}
