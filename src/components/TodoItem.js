@@ -1,4 +1,4 @@
-import React from "react";
+import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 
 export default function TodoItem(todo, index) {
   return (
@@ -13,7 +13,9 @@ export default function TodoItem(todo, index) {
           {todo.text}
         </span>
       </div>
-      <div></div>
+      <div className="space-x-3 ml-8">
+        <button>{todo.completed ? <FaToggleOff /> : <FaToggleOn />}</button>
+      </div>
     </li>
   );
 }
