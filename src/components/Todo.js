@@ -3,6 +3,7 @@ import { BsPlus, BsSearch } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { UpdateSearchTerm, addTodo } from "./../redux/actions";
 import FilterButton from "./FilterButton";
+import TodoList from "./TodoList";
 
 const Todo = () => {
   const dispatch = useDispatch();
@@ -69,6 +70,7 @@ const Todo = () => {
           </button>
         </div>
       </div>
+      <TodoList />
     </div>
   );
 };
