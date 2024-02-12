@@ -12,12 +12,14 @@ const Todo = () => {
     dispatch(addTodo(text));
   };
 
-  const [newTodoText, setMewTodoText] = useState("");
+  const [newTodoText, setNewTodoText] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleAddTodoClick = function () {
-    handleAddTodo(newTodoText.trim());
-    setMewTodoText("");
+    if (newTodoText.trim() !== "") {
+      handleAddTodo(newTodoText.trim());
+      setNewTodoText("");
+    }
   };
 
   const handleSearchChange = (value) => {
