@@ -24,9 +24,10 @@ export default function TodoList() {
     <div>
       <ul>
         <li className="my-2 text-sm-italic">All Your Notes Here...</li>
-        {filteredTodos.map((todo, index) => {
-          <li key={index}>{todo.text}</li>;
-        })}
+
+        {filteredTodos.map((todo, index) => (
+          <li key={index}>{todo.text}</li>
+        ))}
       </ul>
     </div>
   );
