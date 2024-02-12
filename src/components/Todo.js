@@ -46,6 +46,11 @@ const Todo = () => {
           <BsPlus />
         </button>
       </div>
+
+      <div>
+        <FilterButton />
+        <div className="flex items-center mb-4"></div>
+      </div>
       <div>
         <div className="flex items-denter mb-4">
           <input
@@ -63,10 +68,6 @@ const Todo = () => {
           >
             <BsSearch />
           </button>
-        </div>
-        <div>
-          <FilterButton />
-          <div className="flex items-center mb-4"></div>
         </div>
       </div>
     </div>
