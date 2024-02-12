@@ -35,7 +35,7 @@ const Todo = () => {
       <div className="flex items-center mb-4">
         <input
           value={newTodoText}
-          onChange={(e) => setMewTodoText(e.target.value)}
+          onChange={(e) => setNewTodoText(e.target.value)}
           type="text"
           name="text"
           id="addTodoInput"
